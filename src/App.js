@@ -1,8 +1,6 @@
 import './App.css';
-import {Route, Switch, NavLink} from 'react-router-dom';
-import DogList from './DogList';
-import Dog from './Dog';
-import { render } from 'react-dom';
+import Navbar from './Navbar';
+import Routes from './Routes';
 import charlie from './dogImages/charlie.jpg';
 import lumpy from './dogImages/lumpy.jpg';
 import tiddwell from './dogImages/tiddwell.jpg';
@@ -45,19 +43,10 @@ class App extends Component {
     ]
   }
   render() {
-    const getDog = props => {
-      let name = props.match.params.name;
-      let currentDog = this.props.dogs.find(
-        dog => dog.name.toLowerCase() === name.toLowerCase()
-      );
-      return <Dog {...props} dog={currentDog} />
-    }
     return(
       <div>
-        <Switch>
-          <Route exact path='/dogs' render={() => <DogList dogs={this.props.dogs} />} />
-          <Route exact path='/dogs/:name' render={getDog} />
-        </Switch>
+        <Navbar dogs={this.props.dogs} />
+        <Routes dogs={this.props.dogs}/>
       </div>
     )
   }
