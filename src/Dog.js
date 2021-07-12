@@ -6,7 +6,6 @@ class Dog extends Component {
     render() {
         let {dog} = this.props;
         return(
-            <div className='container'>
                 <div className='Dog row justify-content-center mt-5'>
                     <div className='col-11 col-lg-5'>
                         <div className='Dog-card card'>
@@ -28,7 +27,6 @@ class Dog extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }
